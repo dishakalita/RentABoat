@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div id="rentBtn" onclick="location.href='@Url.Action("Index", "Rent")'">
+        <button>Rent a boat</button>
+    </div>
+    <div id="registerBtn"  onclick="location.href='@Url.Action("Index", "Register")'"">
+        <button>Register a boat</button>
+    </div>
+</div>
+<script src="~/js/Home/Index.js?v=2"></script>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ViewModels.BoatModel>
+
+<div>
+    <h4>Below are list of boats we currently have</h4>
+    <ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Name : @item.HourlyRate
+        </li> 
+        
+    }
+    </ul>
+</div>
+<br />
+    <div id="rentFormDiv">
+        <h4>Please fill the form to rent a boat to a customer:</h4>
+        <form id="newRentForm">
+            <div>
+                <label for="boatId">Boat Id:</label>
+                @Html.DropDownList("boatId", (IEnumerable<SelectListItem>)ViewBag.BoatSelectList, new { id = "boatList", @class = "form-control" })
+            </div>
+            <div>
+                <label for="CustomerName">Customer Name:</label>
+                <input type="text" name="CustomerName" id="cusName" />
+            </div>
+            <div>
+                <label for="ContactNumber">Contact Number:</label>
+                <input type="text" name="ContactNumber" id="contactNo" />
+            </div>
+            <div>
+                <input type="button" onclick="RentToCustomer()" name="Rent" value="Rent Boat" />
+            </div>
+        </form>
+    </div>
+    <div id="RemarkDiv" style="display:none">
+        <span id="SuccessMsg"></span>
+        <div>
+            <button onclick="location.href='@Url.Action("Index", "Register")'">Return</button>
+        </div>
+    </div>
+
+
+    <script src="~/js/Rent/Index.js?v=10"></script>

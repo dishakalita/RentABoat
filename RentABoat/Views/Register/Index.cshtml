@@ -1,0 +1,18 @@
+﻿<div id="formDiv">
+    <form id="newBoatForm">
+        <div>
+            <label for="boatName">Boat name:</label>
+            <input type="text" name="boatName" id="btName" />
+        </div>
+        <label for="hourlyRate">Hourly Rate:</label>
+        <input type="number" step="any" min="0" name="hourlyRate" id="btRate" />
+        <input type="button" onclick="RegisterBoat()" name="Register" value="Register Boat" />
+    </form>
+</div>
+<div id="RemarkDiv" style="display:none">
+    <span id="SuccessMsg"></span>
+    <div>
+        <button onclick="location.href='@Url.Action("Index", "Register")'">Return</button>
+    </div>
+</div>
+<script src="~/js/Register/Index.js?v=7"></script>
