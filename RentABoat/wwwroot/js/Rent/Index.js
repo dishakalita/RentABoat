@@ -14,7 +14,7 @@
                 alert("The boat with Id: " + data.boatid + " has been successfully assigned to " + data.cusname);
            }
             else {
-                alert(data.errortext);
+                alert(data.err);
             }
         },
         error: function (xhr) {

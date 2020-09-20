@@ -40,7 +40,7 @@ namespace RentABoat.Controllers
                 if(!isAvailable)
                 {
                     errorText = "Selected boat is not available right now. Please select a different boat.";
-                    return Json(new { success = false, errorText = errorText });
+                    return Json(new { success = false, err = errorText.ToString() });
                 }
                 rentBoatService.RentBoatToCustomer(BoatId, CustomerName, ContactNo);
             }
@@ -50,7 +50,7 @@ namespace RentABoat.Controllers
             }
             if (errorText != String.Empty)
             {
-                return Json(new { success = false, errortext = errorText });
+                return Json(new { success = false, err = errorText.ToString() });
             }
             else
                 return Json(new { success = true, boatid = BoatId.ToString(), cusname = CustomerName.ToString() });
